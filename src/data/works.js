@@ -9,7 +9,7 @@ export const works = [
     title: 'RAINFO GRAPHICS',
     image: '/images/works/rainfo_graphicks.jpg',
     text: '梅雨の憂鬱な雨をちょっと楽しくする企画。雨が降ると屋外の雨センサーが反応し、会社のエントランスの天井が光るようにプログラミングしました。雨の種類に応じて、13種類のアニメーションを作詞しています。',
-    link: 'https://www.youtube.com/upload',
+    link: 'https://youtu.be/z_ZsJamscKs',
   },
   {
     title: 'お父さんAIスケッチ',
