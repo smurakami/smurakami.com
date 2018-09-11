@@ -23,6 +23,7 @@ class Top extends Component {
       <div className="App">
         <Title></Title>
         <Statement></Statement>
+        <Works></Works>
         <History></History>
       </div>
     );
@@ -103,6 +104,32 @@ class Title extends Component {
   }
 }
 
+const TopTriangle = () => {
+  const style = {
+    position: 'absolute',
+    top: -Utils.sectionBorderHeight(),
+    zIndex: 2,
+    width: 0,
+    height: 0,
+    borderLeft: `${Utils.sectionBorderWidth()}px solid transparent`,
+    borderBottom: `${Utils.sectionBorderHeight()}px solid #2c3e50`,
+  }
+  return (<div style={style}></div>)
+}
+
+const BottomTriangle = () => {
+  const style = {
+    position: 'absolute',
+    // top: Utils.sectionBorderHeight(),
+    zIndex: 2,
+    width: 0,
+    height: 0,
+    borderRight: `${Utils.sectionBorderWidth()}px solid transparent`,
+    borderTop: `${Utils.sectionBorderHeight()}px solid #2c3e50`,
+  }
+  return (<div style={style}></div>)
+}
+
 class Statement extends Component {
   constructor(props) {
     super(props)
@@ -111,32 +138,6 @@ class Statement extends Component {
   handleResize() {this.setState({}); }
 
   render() {
-    const TopTriangle = () => {
-      const style = {
-        position: 'absolute',
-        top: -Utils.sectionBorderHeight(),
-        zIndex: 2,
-        width: 0,
-        height: 0,
-        borderLeft: `${Utils.sectionBorderWidth()}px solid transparent`,
-        borderBottom: `${Utils.sectionBorderHeight()}px solid #2c3e50`,
-      }
-      return (<div style={style}></div>)
-    }
-
-    const BottomTriangle = () => {
-      const style = {
-        position: 'absolute',
-        // top: Utils.sectionBorderHeight(),
-        zIndex: 2,
-        width: 0,
-        height: 0,
-        borderRight: `${Utils.sectionBorderWidth()}px solid transparent`,
-        borderTop: `${Utils.sectionBorderHeight()}px solid #2c3e50`,
-      }
-      return (<div style={style}></div>)
-    }
-
     return (
       <div className="Statement">
         <EventListener target="window" onResize={this.handleResize.bind(this)} />
@@ -159,8 +160,45 @@ class Statement extends Component {
 class Works extends Component {
   handleResize() {this.setState({}); }
   render() {
+    const {works} = require('./data/works');
+
+    const makeWorkCard = (data, index) => {
+      var link = 'javascript:void(0)';
+      var action = (<div></div>);
+      if (data.link) {
+        link = data.link;
+        action = (
+          <div className="card-action red-text text-lighten-2">
+            LINK
+          </div>
+        )
+      }
+
+      return (
+        <div className="work col s12 m6" key={index}>
+          <a href={link} className='disabled'>
+            <div className="card">
+              <div className="card-image">
+                <img src={data.image} />
+              </div>
+              <div className="card-content">
+                <span className="card-title">{data.title}</span>
+                <p>{data.text}</p>
+              </div>
+              {action}
+            </div>
+          </a>
+        </div>
+      )}
+
     return (
-      <div className="Works">
+      <div className="Works"style={{paddingTop: Utils.sectionBorderHeight(), paddingBottom: Utils.sectionBorderHeight()}}>
+        <div className="container">
+          <p className="title code">WORKS</p>
+          <div className="row flex">
+            {works.map(makeWorkCard)}
+          </div>
+        </div>
       </div>
       )
   }
@@ -185,7 +223,7 @@ class History extends Component {
 
     const makeStudyCard = (data, index) => (
       <div className="elem col s12 m6 l4" key={index}>
-        <div className="card">
+        <div className="card blue-grey darken-4">
           <div className="card-content">
             <span className="card-title">{data.title}</span>
             <p className='time'>{data.time}</p>
@@ -198,7 +236,7 @@ class History extends Component {
 
     const makeExperienceCard = (data, index) => (
       <div className="elem col s12 m6 l4" key={index}>
-        <div className="card">
+        <div className="card blue-grey darken-4">
           <div className="card-content">
             <span className="card-title">{data.title}</span>
             <p className='time'>{data.time}</p>
@@ -210,8 +248,9 @@ class History extends Component {
 
 
     return (
-      <div className="History" style={{paddingTop: Utils.sectionBorderHeight()}}>
+      <div className="History">
         <EventListener target="window" onResize={this.handleResize.bind(this)} />
+        <TopTriangle></TopTriangle>
         <div className="container">
           <p className="title code">STUDY</p>
           <div className="study">

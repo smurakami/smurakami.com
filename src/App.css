@@ -8,6 +8,10 @@ body {
     font-family: Lato, "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 
+a {
+  cursor : pointer;
+}
+
 @-webkit-keyframes slide {
   from {
     background-position: 0px 0px;
@@ -42,7 +46,7 @@ body {
   margin-bottom: 1.5em;
 }
 
-.Statement .statement p {
+.St atement .statement p {
   font-size: 16px;
   margin: 0px;
   margin-bottom: 1em;
@@ -52,13 +56,48 @@ body {
   padding-bottom: 8px;
 }
 
+.Works {
+  position: relative;
+}
+
+.Works p.title {
+  margin-top: 0;
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 1.5em;
+}
+
+.Works .col.work {
+  box-sizing: border-box;
+  margin-left: 0;
+}
+
+.Works .work a {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.Works .work a.disabled {
+  pointer-events: none;
+}
+
+.Works .work .card-action {
+  font-weight: bold;
+  text-align: center;
+}
+
 .History {
+  position: relative;
+  background-color: #2c3e50;
+  padding-bottom: 40px;
 }
 
 .History p.title {
   text-align: center;
   font-size: 40px;
   margin-bottom: 1.5em;
+  color: white;
 }
 
 .History p.title {
@@ -73,11 +112,11 @@ body {
 }
 
 .History p.time {
-  color: #7f8c8d;
+  color: #ecf0f1;
 }
 
 .History p.place {
-  color: #7f8c8d;
+  color: #ecf0f1;
   margin-bottom: 8px;
 }
 
@@ -88,6 +127,7 @@ body {
 .History .row .col.elem {
   box-sizing: border-box;
   margin-left: 0;
+  color: white;
 }
 
 .History .study {
