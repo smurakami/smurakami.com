@@ -76,10 +76,6 @@ class Title extends Component {
 
     const dot_style = {
       paddingTop: window.innerHeight * 0.5 - logo_height/2,
-      width: '100%',
-      height: '100%',
-      backgroundImage: 'url(/images/dot_pattern.png)',
-      backgroundSize: '20px',
     }
 
     return (
@@ -162,6 +158,26 @@ class Works extends Component {
   render() {
     const {works} = require('./data/works');
 
+    const Background = () => {
+      var style = {
+        position: 'fixed',
+        width: window.innerWidth,
+        height: window.innerHeight,
+        top: 0,
+        zIndex: -1,
+        backgroundImage: 'url(/images/mft.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        opacity: 0.25,
+      }
+
+      return (
+        <div style={style}>
+          <div className="dot-pattern"></div>
+        </div>
+        )
+    }
+
     const makeWorkCard = (data, index) => {
       var link = 'javascript:void(0)';
       var action = (<div></div>);
@@ -175,7 +191,7 @@ class Works extends Component {
       }
 
       return (
-        <div className="work col s12 m6" key={index}>
+        <div className="work col s12 m6 l4" key={index}>
           <a href={link} className='disabled'>
             <div className="card">
               <div className="card-image">
@@ -193,7 +209,9 @@ class Works extends Component {
 
     return (
       <div className="Works"style={{paddingTop: Utils.sectionBorderHeight(), paddingBottom: Utils.sectionBorderHeight()}}>
-        <div className="container">
+        <EventListener target="window" onResize={this.handleResize.bind(this)} />
+        <Background></Background>
+        <div className="workscontainer">
           <p className="title code">WORKS</p>
           <div className="row flex">
             {works.map(makeWorkCard)}
