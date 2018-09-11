@@ -1,0 +1,116 @@
+.App {
+}
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+
+body {
+    font-family: Lato, "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+@-webkit-keyframes slide {
+  from {
+    background-position: 0px 0px;
+  }
+  to {
+    background-position: 40px -40px;
+  }
+}
+
+.Title {
+}
+
+.Title .dot-pattern {
+  -webkit-animation: slide 2s linear infinite;
+  -webkit-transition: padding-top 300ms 0s ease;
+}
+
+.Statement {
+  position: relative;
+  color: white;
+  text-align: center;
+  background-color: #2c3e50;
+}
+
+.code {
+  font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
+}
+
+.Statement p.title {
+  margin-top: 0px;
+  font-size: 40px;
+  margin-bottom: 1.5em;
+}
+
+.Statement .statement p {
+  font-size: 16px;
+  margin: 0px;
+  margin-bottom: 1em;
+}
+
+.Statement .statement {
+  padding-bottom: 8px;
+}
+
+.History {
+}
+
+.History p.title {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 1.5em;
+}
+
+.History p.title {
+  text-align: center;
+  font-size: 40px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.History p {
+  line-height: 1.7em;
+}
+
+.History p.time {
+  color: #7f8c8d;
+}
+
+.History p.place {
+  color: #7f8c8d;
+  margin-bottom: 8px;
+}
+
+.History p.text {
+  line-height: 1.7em;
+}
+
+.History .row .col.elem {
+  box-sizing: border-box;
+  margin-left: 0;
+}
+
+.History .study {
+  margin-bottom: 50px;
+}
+
+.flex {
+  display:-webkit-box;
+  display:-moz-box;
+  display:-ms-box;
+  display:-webkit-flexbox;
+  display:-moz-flexbox;
+  display:-ms-flexbox;
+  display:-webkit-flex;
+  display:-moz-flex;
+  display:-ms-flex;
+  display:flex;
+  -webkit-box-lines:multiple;
+  -moz-box-lines:multiple;
+  -webkit-flex-wrap:wrap;
+  -moz-flex-wrap:wrap;
+  -ms-flex-wrap:wrap;
+  flex-wrap:wrap;
+  flex-direction:row;
+}
+
