@@ -52,20 +52,8 @@ class Title extends Component {
     }, 100)
   }
 
-  handleResize() {
-    this.setState({
-    }, () => {
-      if (this.timer) { clearTimeout(this.timer) }
-      this.timer = setTimeout(() => {
-        this.setState({logo_height: this.refs.logo.clientHeight})
-      }, 1000)
-    })
-  }
-
   render() {
     const {logo_height} = this.state;
-
-    console.log(logo_height)
 
     const title_style = {
       backgroundImage: 'url(/images/profile.jpg)',
@@ -75,12 +63,11 @@ class Title extends Component {
     };
 
     const dot_style = {
-      paddingTop: window.innerHeight * 0.5 - logo_height/2,
+      paddingBottom: Utils.sectionBorderHeight(),
     }
 
     return (
       <div className="Title" style={title_style}>
-        <EventListener target="window" onResize={this.handleResize.bind(this)} />
         <div className="dot-pattern" style={dot_style}>
           <div className="container">
             <div className="logo" ref='logo'>
