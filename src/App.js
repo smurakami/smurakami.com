@@ -101,14 +101,16 @@ const BottomTriangle = (props) => {
 }
 
 const Statement = () =>  {
+  const SBR = () => (<br className='hide-on-med-and-up' />)
+
   return (
     <div className="Statement">
       <div className="container">
         <p className="title code">{'> make $you smile;'}</p>
         <div className="statement">
-          <p>三度の飯くらいプログラミングが好きなサラリーマンが、</p>
+          <p>三度の飯くらいプログラミングが<SBR />好きなサラリーマンが、</p>
           <p>アイデアの力でどこまで飛べるのか。</p>
-          <p>最近仲間になった「ディープラーニング」を携えて、</p>
+          <p>最近仲間になった<SBR />「ディープラーニング」を携えて、</p>
           <p>今日も考え、作り、動かす。</p>
         </div>
       </div>

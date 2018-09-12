@@ -30,13 +30,6 @@ a {
   background-size: 20px;
 }
 
-.Statement {
-  position: relative;
-  color: white;
-  text-align: center;
-  background-color: #2c3e50;
-}
-
 .code {
   font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
 }
@@ -67,17 +60,37 @@ a {
   width: 100%;
 }
 
+.Statement {
+  position: relative;
+  color: white;
+  text-align: center;
+  background-color: #2c3e50;
+}
+
 .Statement p.title {
   margin-top: 0px;
   font-size: 40px;
   margin-bottom: 1.5em;
 }
 
+@media all and (max-width: 600px) {
+  .Statement p.title {
+    font-size: 24px;
+  }
+}
+
 .Statement .statement p {
   font-size: 16px;
   margin: 0px;
-  margin-bottom: 1em;
+  line-height: 1.8em;
 }
+
+@media all and (max-width: 600px) {
+  .Statement .statement p {
+    font-size: 14px;
+  }
+}
+
 
 .Statement .statement {
   padding-bottom: 8px;
