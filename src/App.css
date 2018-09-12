@@ -130,6 +130,7 @@ a {
 .Works .work .card-action {
   font-weight: bold;
   text-align: center;
+  width: 100%;
 }
 
 .History {

@@ -149,7 +149,7 @@ class Works extends Component {
       if (data.link) {
         link = data.link;
         action = (
-          <div className="card-action red-text text-lighten-2">
+          <div className="card-action red-text text-lighten-2 waves-effect waves-red">
             LINK
           </div>
         )
@@ -157,18 +157,18 @@ class Works extends Component {
 
       return (
         <div className="work col s12 m6 l4" key={index}>
-          <a href={link} className='disabled'>
-            <div className="card">
-              <div className="card-image">
-                <img src={data.image} />
-              </div>
-              <div className="card-content">
-                <span className="card-title">{data.title}</span>
-                <p>{data.text}</p>
-              </div>
-              {action}
+          <div className="card">
+            <div className="card-image">
+              <img src={data.image} />
             </div>
-          </a>
+            <div className="card-content">
+              <span className="card-title">{data.title}</span>
+              <p>{data.text}</p>
+            </div>
+            <a href={link}>
+            {action}
+            </a>
+          </div>
         </div>
       )}
 
