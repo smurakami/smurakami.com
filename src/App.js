@@ -44,20 +44,20 @@ const Title = () => {
   return (
     <div className="Title" style={title_style}>
       <div className="dot-pattern">
-        <div className="container">
-          <div className="logo" style={logo_style}>
-            <img 
-            className="hide-on-small-only" 
-            src="/images/logo_yoko.svg"
-            alt="ディープサラリーマン村上晋太郎" />
-            <img 
-            className="hide-on-med-and-up" 
-            src="/images/logo_tate.svg"
-            alt="ディープサラリーマン村上晋太郎" />
-          </div>
-        </div>
-      <TopTriangle color='#2c3e50' />
       </div>
+      <div className="container">
+        <div className="logo" style={logo_style}>
+          <img 
+          className="hide-on-small-only" 
+          src="/images/logo_yoko.svg"
+          alt="ディープサラリーマン村上晋太郎" />
+          <img 
+          className="hide-on-med-and-up" 
+          src="/images/logo_tate.svg"
+          alt="ディープサラリーマン村上晋太郎" />
+        </div>
+      </div>
+      <TopTriangle color='#2c3e50' />
     </div>
   )
 };
@@ -73,6 +73,7 @@ const TopTriangle = (props) => {
   ]
   const style = {
     verticalAlign: 'bottom',
+    position: 'relative',
   }
   return (
     <svg viewBox={[0, 0, width, height].join(' ')} style={style}>
