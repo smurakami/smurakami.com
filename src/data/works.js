@@ -26,12 +26,12 @@ export const works = [
     image: '/images/works/naitei_hima.jpg',
     text: '電通インターンシップの特別施策として実施。Rails on AWSで実装を担当しました。',
   },
-  {
-    title: 'こたえのないえかきうた',
-    image: '/images/works/gd_ekakiuta.jpg',
-    text: '毎日変わる「答えのない絵かき歌」にあわせて、絵を想像して描いてみる、Amazon Echoを使った遊びです。子どもたちに答えのない現代社会を生きるヒントを与えることを目指しました。企画から実装まで担当。',
-    link: 'https://www.suntory.co.jp/softdrink/greendakara/ekakiuta/',
-  },
+  // {
+  //   title: 'こたえのないえかきうた',
+  //   image: '/images/works/gd_ekakiuta.jpg',
+  //   text: '毎日変わる「答えのない絵かき歌」にあわせて、絵を想像して描いてみる、Amazon Echoを使った遊びです。子どもたちに答えのない現代社会を生きるヒントを与えることを目指しました。企画から実装まで担当。',
+  //   link: 'https://www.suntory.co.jp/softdrink/greendakara/ekakiuta/',
+  // },
   {
     title: 'ZUNOさん',
     image: '/images/works/zunosan.jpg',
