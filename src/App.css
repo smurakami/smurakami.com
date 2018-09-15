@@ -28,6 +28,12 @@ a {
 /* used in Title and Works */
 .dot-pattern {
   position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.dot-pattern-inner {
   -webkit-animation: slide 2s linear infinite;
   /*-webkit-transition: padding-top 300ms 0s ease;*/
   width: calc(100% + 40px);

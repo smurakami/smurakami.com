@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import EventListener from 'react-event-listener';
 import { BrowserRouter, Route, Link } from 'react-router-dom'
+import QR from './QR';
 
 import './App.css';
 
@@ -12,6 +13,7 @@ const App = () => (
   <BrowserRouter>
     <div>
       <Route exact path='/' component={Top} />
+      <Route path='/qr' component={QR} />
       <Route path='/works/:index' component={Work} />
     </div>
   </BrowserRouter>
@@ -44,6 +46,8 @@ const Title = () => {
   return (
     <div className="Title" style={title_style}>
       <div className="dot-pattern">
+        <div className="dot-pattern-inner">
+        </div>
       </div>
       <div className="container">
         <div className="logo" style={logo_style}>
