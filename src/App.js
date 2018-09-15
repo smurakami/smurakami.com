@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import EventListener from 'react-event-listener';
+// import EventListener from 'react-event-listener';
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 import QR from './QR';
 
@@ -11,7 +11,7 @@ import './App.css';
 
 const App = () => (
   <BrowserRouter>
-    <div>
+    <div className='App'>
       <Route exact path='/' component={Top} />
       <Route path='/qr' component={QR} />
       <Route path='/works/:index' component={Work} />
