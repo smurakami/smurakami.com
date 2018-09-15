@@ -29,7 +29,6 @@ const QR = () => {
       </div>
       <div className="footer">
         <div className="background">
-          
         </div>
       </div>
     </div>)
