@@ -13,6 +13,7 @@ const App = () => (
   <BrowserRouter>
     <div className='App'>
       <Route exact path='/' component={Top} />
+      <Route exact path='/en' component={Top} />
       <Route path='/qr' component={QR} />
       <Route path='/works/:index' component={Work} />
     </div>
