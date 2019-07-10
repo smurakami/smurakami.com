@@ -13,7 +13,7 @@ const App = () => (
   <BrowserRouter>
     <div className='App'>
       <Route exact path='/' component={Top} />
-      <Route exact path='/en' component={Top} />
+      <Route exact path='/en' component={TopEnglish} />
       <Route path='/qr' component={QR} />
       <Route path='/works/:index' component={Work} />
     </div>
@@ -25,9 +25,22 @@ class Top extends Component {
     return (
       <div className="App">
         <Title></Title>
-        <Statement></Statement>
-        <Works></Works>
-        <History></History>
+        <Statement lang="ja"></Statement>
+        <Works lang="ja"></Works>
+        <History lang="ja"></History>
+      </div>
+    );
+  }
+}
+
+class TopEnglish extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Title></Title>
+        <Statement lang="en"></Statement>
+        <Works lang="en"></Works>
+        <History lang="en"></History>
       </div>
     );
   }
@@ -106,19 +119,30 @@ const BottomTriangle = (props) => {
     )
 }
 
-const Statement = () =>  {
+const Statement = (props) =>  {
+  const {lang} = props;
   const SBR = () => (<br className='hide-on-med-and-up' />)
 
   return (
     <div className="Statement">
       <div className="container">
         <p className="title code">{'> make $you smile;'}</p>
-        <div className="statement">
-          <p>三度の飯くらいプログラミングが<SBR />好きなサラリーマンが、</p>
-          <p>アイデアの力でどこまで飛べるのか。</p>
-          <p>最近仲間になった<SBR />「ディープラーニング」を携えて、</p>
-          <p>今日も考え、作り、動かす。</p>
-        </div>
+          {
+            lang == "ja" ?
+            <div className="statement">
+              <p>三度の飯くらいプログラミングが<SBR />好きなサラリーマンが、</p>
+              <p>アイデアの力でどこまで飛べるのか。</p>
+              <p>最近仲間になった<SBR />「ディープラーニング」を携えて、</p>
+              <p>今日も考え、作り、動かす。</p>
+            </div>
+            :
+            <div className="statement">
+              <p>I love programming as much as sushi.</p>
+              <p>"How far can I go with creative thinking?"</p>
+              <p>I will keep trying to find answer for this question.</p>
+              <p>Think, make, execute everyday!</p>
+            </div>
+          }
       </div>
     </div>
   )
@@ -128,6 +152,7 @@ class Works extends Component {
   handleResize() {this.setState({}); }
   render() {
     const {works} = require('./data/works');
+    const {lang} = this.props;
 
     const Background = () => {
       var style = {
@@ -161,6 +186,16 @@ class Works extends Component {
         )
       }
 
+      var text = data.text;
+      if (lang == "en" && (data.text_en)) {
+        text = data.text_en;
+      } 
+
+      var title = data.title;
+      if (lang == "en" && (data.title_en)) {
+        title = data.title_en;
+      } 
+
       return (
         <div className="work col s12 m6 l4" key={index}>
           <div className="card">
@@ -168,8 +203,8 @@ class Works extends Component {
               <img src={data.image} />
             </div>
             <div className="card-content">
-              <span className="card-title">{data.title}</span>
-              <p>{data.text}</p>
+              <span className="card-title">{title}</span>
+              <p>{text}</p>
             </div>
             <a href={link}>
             {action}
@@ -205,33 +240,63 @@ class Work extends Component {
 }
 
 
-const History = () => {
+const History = (props) => {
   const {studies, experiences} = require('./data/history');
+  const {lang} = props;
 
-  const makeStudyCard = (data, index) => (
-    <div className="elem col s12 m6 l4" key={index}>
-      <div className="card blue-grey darken-4">
-        <div className="card-content">
-          <span className="card-title">{data.title}</span>
-          <p className='time'>{data.time}</p>
-          <p className='place' dangerouslySetInnerHTML={{__html: data.place}}></p>
-          <p className='text'>{data.text}</p>
+  const makeStudyCard = (data, index) => {
+    var text = data.text;
+    if (lang == "en" && (data.text_en)) {
+      text = data.text_en;
+    } 
+
+    var title = data.title;
+    if (lang == "en" && (data.title_en)) {
+      title = data.title_en;
+    } 
+
+    var place = data.place;
+    if (lang == "en" && (data.place_en)) {
+      place = data.title_en;
+    } 
+
+    return (
+      <div className="elem col s12 m6 l4" key={index}>
+        <div className="card blue-grey darken-4">
+          <div className="card-content">
+            <span className="card-title">{title}</span>
+            <p className='time'>{data.time}</p>
+            <p className='place' dangerouslySetInnerHTML={{__html: place}}></p>
+            <p className='text'>{text}</p>
+          </div>
         </div>
       </div>
-    </div>
     )
+  }
 
-  const makeExperienceCard = (data, index) => (
-    <div className="elem col s12 m6 l4" key={index}>
-      <div className="card blue-grey darken-4">
-        <div className="card-content">
-          <span className="card-title">{data.title}</span>
-          <p className='time'>{data.time}</p>
-          <p className='text'>{data.job}</p>
+  const makeExperienceCard = (data, index) => {
+    var text = data.text;
+    if (lang == "en" && (data.text_en)) {
+      text = data.text_en;
+    } 
+
+    var title = data.title;
+    if (lang == "en" && (data.title_en)) {
+      title = data.title_en;
+    } 
+
+    return (
+      <div className="elem col s12 m6 l4" key={index}>
+        <div className="card blue-grey darken-4">
+          <div className="card-content">
+            <span className="card-title">{title}</span>
+            <p className='time'>{data.time}</p>
+            <p className='text'>{data.job}</p>
+          </div>
         </div>
       </div>
-    </div>
     )
+  }
 
 
   return (
