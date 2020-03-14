@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 // import EventListener from 'react-event-listener';
 import { BrowserRouter, Route, Link } from 'react-router-dom'
+
 import QR from './QR';
+import {TopTriangle, BottomTriangle} from './Triangles'
+import Works from './Works'
 
 import './App.css';
 
-// import logo_yoko from './images/logo_yoko.svg';
-// import logo_tate from './images/logo_tate.svg';
-// import profile_image from './images/profile.jpg'
 
 const App = () => (
   <BrowserRouter>
@@ -15,7 +15,7 @@ const App = () => (
       <Route exact path='/' component={Top} />
       <Route exact path='/en' component={TopEnglish} />
       <Route path='/qr' component={QR} />
-      <Route path='/works/:index' component={Work} />
+      {/* <Route path='/works/:index' component={Work} /> */}
     </div>
   </BrowserRouter>
 );
@@ -80,44 +80,6 @@ const Title = () => {
   )
 };
 
-const TopTriangle = (props) => {
-  const {color} = props;
-  const width = 100;
-  const height = width * Math.tan(Math.PI/12);
-  const points = [
-    0, height,
-    width, height,
-    width, 0,
-  ]
-  const style = {
-    verticalAlign: 'bottom',
-    position: 'relative',
-  }
-  return (
-    <svg viewBox={[0, 0, width, height].join(' ')} style={style}>
-      <polygon points={points.join(',')} stroke="none" fill={color} />
-    </svg>
-    )
-}
-
-const BottomTriangle = (props) => {
-  const {color} = props;
-  const width = 100;
-  const height = width * Math.tan(Math.PI/12);
-  const points = [
-    0, 0,
-    width, 0,
-    0, height,
-  ]
-  const style = {
-    verticalAlign: 'top',
-  }
-  return (
-    <svg viewBox={[0, 0, width, height].join(' ')} style={style}>
-      <polygon points={points.join(',')} stroke="none" fill={color} />
-    </svg>
-    )
-}
 
 const Statement = (props) =>  {
   const {lang} = props;
@@ -137,108 +99,16 @@ const Statement = (props) =>  {
             </div>
             :
             <div className="statement">
-              <p>I love programming as much as sushi.</p>
-              <p>"How far can I go with creative thinking?"</p>
-              <p>I will keep trying to find answer for this question.</p>
-              <p>Think, make, execute everyday!</p>
+              <p>I love programming as much as sushi🍣</p>
+              <p>"How high can we jump with techonology and creative thinking?"</p>
+              <p>I am trying to find answer to this question.</p>
+              <p>I will keep thinking, creating, executing everyday!</p>
             </div>
           }
       </div>
     </div>
   )
 };
-
-class Works extends Component {
-  handleResize() {this.setState({}); }
-  render() {
-    const {works} = require('./data/works');
-    const {lang} = this.props;
-
-    const Background = () => {
-      var style = {
-        position: 'fixed',
-        width: '100%',
-        height: '100%',
-        top: 0,
-        zIndex: -1,
-        backgroundImage: 'url(/images/mft.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        opacity: 0.25,
-      }
-
-      return (
-        <div style={style}>
-          <div className="dot-pattern"></div>
-        </div>
-        )
-    }
-
-    const makeWorkCard = (data, index) => {
-      var link = 'javascript:void(0)';
-      var action = (<div></div>);
-      if (data.link) {
-        link = data.link;
-        action = (
-          <div className="card-action red-text text-lighten-2 waves-effect waves-red">
-            LINK
-          </div>
-        )
-      }
-
-      var text = data.text;
-      if (lang == "en" && (data.text_en)) {
-        text = data.text_en;
-      } 
-
-      var title = data.title;
-      if (lang == "en" && (data.title_en)) {
-        title = data.title_en;
-      } 
-
-      return (
-        <div className="work col s12 m6 l4" key={index}>
-          <div className="card">
-            <div className="card-image">
-              <img src={data.image} />
-            </div>
-            <div className="card-content">
-              <span className="card-title">{title}</span>
-              <p>{text}</p>
-            </div>
-            <a href={link}>
-            {action}
-            </a>
-          </div>
-        </div>
-      )}
-
-    return (
-      <div className="Works">
-        <Background></Background>
-        <BottomTriangle color='#2c3e50'></BottomTriangle>
-        <div className="workscontainer">
-          <p className="title code">WORKS</p>
-          <div className="row flex">
-            {works.map(makeWorkCard)}
-          </div>
-        </div>
-        <TopTriangle color='#2c3e50' />
-      </div>
-      )
-  }
-}
-
-class Work extends Component {
-  handleResize() {this.setState({}); }
-  render() {
-    return (
-      <div className="Work">
-      </div>
-      )
-  }
-}
-
 
 const History = (props) => {
   const {studies, experiences} = require('./data/history');
