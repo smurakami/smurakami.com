@@ -53,7 +53,7 @@ export const experiences = [
   {
     title: 'Dentsu Inc.',
     time: '2016-',
-    job: 'ディープサラリーマン',
+    job: 'Creative Technologist',
   },
 ];
 

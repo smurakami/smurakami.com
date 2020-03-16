@@ -45,7 +45,6 @@ class Works extends Component {
 }
 
 function Work(props) {
-// = (data, index, lang) => {
   const {work, index, lang} = props
   var link = 'javascript:void(0)';
   var action = (<div></div>);

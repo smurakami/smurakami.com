@@ -1,5 +1,37 @@
 export const works = [
   {
+    title: '°Curation',
+    title_en: '°Curation',
+    image: '/images/works/curation.jpg',
+    text: 'A device which show landscape paintings with the same temperature and humidity as the place. I trained deep leaning model which predicts humidity and temperature from painting.  ',
+    text_en: 'A device which show landscape paintings with the same temperature and humidity as the place. I trained deep leaning model which predicts humidity and temperature from painting.  ',
+    link: 'https://curation-ai.com/',
+  },
+  {
+    title: 'Paper Waste Toy AMARIKKO',
+    title_en: 'Paper Waste Toy AMARIKKO',
+    image: '/images/works/amarikko.jpg',
+    text: 'A system that estimates animal similarities from paper scraps and prints them to create animal toys. I used “Quick Draw Dataset” to create a deep learning model that associates animals with contours.',
+    text_en: 'A system that estimates animal similarities from paper scraps and prints them to create animal toys. I used “Quick Draw Dataset” to create a deep learning model that associates animals with contours.',
+    link: 'https://amarikko.com/',
+  },
+  {
+    title: 'Neural Jazz',
+    title_en: 'Neural Jazz',
+    image: '/images/works/NeuralJazz.jpg',
+    text: 'An installation where a human and a machine learning model make a jam session. I created this system using Magenta code, and also designed a system to visualize the interaction between the performer and the machine. ',
+    text_en: 'An installation where a human and a machine learning model make a jam session. I created this system using Magenta code, and also designed a system to visualize the interaction between the performer and the machine. ',
+    link: 'https://youtu.be/7DgU_p6eOps',
+  },
+  {
+    title: '240 Posters of Rugby Strategy',
+    title_en: '240 Posters of Rugby Strategy',
+    image: '/images/works/rugby.jpg',
+    text: 'A Series of posters which visualizes the “strategic four minutes” of 2015 match between Japan and the powerful South Africa. I generated all strategy pattern using python.',
+    text_en: 'A Series of posters which visualizes the “strategic four minutes” of 2015 match between Japan and the powerful South Africa. I generated all strategy pattern using python.',
+    link: 'https://youtu.be/iyF1SRo0Uu8',
+  },
+  {
     title: '先輩風壱号',
     title_en: 'Alcohol Detector Machine',
     image: '/images/works/senpaikaze.jpg',
