@@ -126,42 +126,6 @@ a {
   padding-bottom: 8px;
 }
 
-.Works {
-  position: relative;
-  background: none;
-}
-
-.Works .works-container {
-  padding: 0 1;
-}
-
-.Works p.title {
-  margin-top: 0;
-  text-align: center;
-  font-size: 40px;
-  margin-bottom: 1.5em;
-}
-
-.Works .col.work {
-  box-sizing: border-box;
-  margin-left: 0;
-}
-
-.Works .work a {
-  cursor: pointer;
-  text-decoration: none;
-  color: black;
-}
-
-.Works .work a.disabled {
-  pointer-events: none;
-}
-
-.Works .work .card-action {
-  font-weight: bold;
-  text-align: center;
-  width: 100%;
-}
 
 .History {
   position: relative;
@@ -202,8 +166,13 @@ a {
 
 .History .row .col.elem {
   box-sizing: border-box;
+  margin-bottom: 32px;
   margin-left: 0;
   color: white;
+}
+
+.History .row .col.elem .card {
+  height: 100%;
 }
 
 .History .study {
@@ -211,23 +180,26 @@ a {
 }
 
 .flex {
-  display:-webkit-box;
-  display:-moz-box;
-  display:-ms-box;
-  display:-webkit-flexbox;
-  display:-moz-flexbox;
-  display:-ms-flexbox;
-  display:-webkit-flex;
-  display:-moz-flex;
-  display:-ms-flex;
-  display:flex;
-  -webkit-box-lines:multiple;
-  -moz-box-lines:multiple;
-  -webkit-flex-wrap:wrap;
-  -moz-flex-wrap:wrap;
-  -ms-flex-wrap:wrap;
-  flex-wrap:wrap;
-  flex-direction:row;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: -webkit-flexbox;
+  display: -moz-flexbox;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: flex;
+
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  
+  flex-direction: row;
 }
 
 .QR {

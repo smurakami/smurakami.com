@@ -8,7 +8,6 @@ import Works from './Works'
 
 import './App.css';
 
-
 const App = () => (
   <BrowserRouter>
     <div className='App'>

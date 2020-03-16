@@ -1,0 +1,50 @@
+
+.Works {
+  position: relative;
+  background: none;
+}
+
+.Works .works-container {
+  padding: 0 1;
+}
+
+.Works p.title {
+  margin-top: 0;
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 1.5em;
+}
+
+.Works .col.work {
+  box-sizing: border-box;
+  margin-left: 0;
+  margin-bottom: 32px;
+}
+
+.Works .work .card-content {
+  padding-bottom: 66px;
+}
+
+.Works .work a {
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.Works .work a.disabled {
+  pointer-events: none;
+}
+
+.Works .work .card {
+  height: 100%;
+}
+
+.Works .work .card-action {
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}

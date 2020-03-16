@@ -1,31 +1,13 @@
 import React, { Component } from 'react';
 import {TopTriangle, BottomTriangle} from './Triangles'
 
+import "./Works.css"
+
 class Works extends Component {
   handleResize() {this.setState({}); }
   render() {
     const {works} = require('./data/works');
     const {lang} = this.props;
-
-    const Background = () => {
-      var style = {
-        position: 'fixed',
-        width: '100%',
-        height: '100%',
-        top: 0,
-        zIndex: -1,
-        backgroundImage: 'url(/images/mft.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        opacity: 0.25,
-      }
-
-      return (
-        <div style={style}>
-          <div className="dot-pattern"></div>
-        </div>
-        )
-    }
 
 
     return (
@@ -35,13 +17,35 @@ class Works extends Component {
         <div className="workscontainer">
           <p className="title code">WORKS</p>
           <div className="row flex">
-            {works.map((work, index) => <Work work={work} index={index} lang={lang}></Work>)}
+            { works.map((work, index) => 
+              <Work work={work} index={index} lang={lang} key={index}></Work>
+              )}
           </div>
         </div>
         <TopTriangle color='#2c3e50' />
       </div>
       )
   }
+}
+
+function Background(props) {
+  var style = {
+    position: 'fixed',
+    width: '100%',
+    height: '100%',
+    top: 0,
+    zIndex: -1,
+    backgroundImage: 'url(/images/mft.jpg)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    opacity: 0.25,
+  }
+
+  return (
+    <div style={style}>
+      <div className="dot-pattern"></div>
+    </div>
+    )
 }
 
 function Work(props) {
