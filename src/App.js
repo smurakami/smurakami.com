@@ -24,7 +24,7 @@ class Top extends Component {
     return (
       <div className="App">
         <Title></Title>
-        <Statement lang="ja"></Statement>
+        {/* <Statement lang="ja"></Statement> */}
         <Works lang="ja"></Works>
         <History lang="ja"></History>
       </div>
@@ -37,7 +37,7 @@ class TopEnglish extends Component {
     return (
       <div className="App">
         <Title></Title>
-        <Statement lang="en"></Statement>
+        {/* <Statement lang="en"></Statement> */}
         <Works lang="en"></Works>
         <History lang="en"></History>
       </div>
@@ -47,7 +47,8 @@ class TopEnglish extends Component {
 
 const Title = () => {
   const title_style = {
-    backgroundImage: 'url(/images/profile.jpg)',
+    // backgroundImage: 'url(/images/profile.jpg)',
+    backgroundColor: "#2c3e50",
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   };
@@ -74,7 +75,7 @@ const Title = () => {
           alt="ディープサラリーマン村上晋太郎" />
         </div>
       </div>
-      <TopTriangle color='#2c3e50' />
+      {/* <TopTriangle color='#2c3e50' /> */}
     </div>
   )
 };

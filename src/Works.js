@@ -12,8 +12,8 @@ class Works extends Component {
 
     return (
       <div className="Works">
-        <Background></Background>
-        <BottomTriangle color='#2c3e50'></BottomTriangle>
+        {/* <Background></Background> */}
+        {/* <BottomTriangle color='#2c3e50'></BottomTriangle> */}
         <div className="workscontainer">
           <p className="title code">WORKS</p>
           <div className="row flex">

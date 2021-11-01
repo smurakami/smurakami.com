@@ -44,15 +44,14 @@ a {
   overflow: hidden;
 }
 
-.dot-pattern-inner {
+/* .dot-pattern-inner {
   -webkit-animation: slide 2s linear infinite;
-  /*-webkit-transition: padding-top 300ms 0s ease;*/
   width: calc(100% + 40px);
   margin-left: -40px;
   height: calc(100% + 40px);
   background-image: url(/images/dot_pattern.png);
   background-size: 20px;
-}
+} */
 
 
 .Title {
